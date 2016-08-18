@@ -1,0 +1,46 @@
+$active-color: #FFFFFF;
+$passive-color: #DFDFDF;
+
+#main-sidenav {
+    background-color: #668899;
+    min-width: 250px;
+
+    .profile-info {
+      text-align:center;
+
+      img {
+        background-color: $active-color;
+        border-radius: 50%;
+        display: block;
+        margin: 10px auto;
+      }
+
+      span {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color:$active-color;
+      }
+    }
+
+    md-list {
+      margin-top: 20px;
+      display: block;
+
+      md-list-item {
+        display: flex;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        color: #FFFFFF;
+        padding: 15px 5px;
+
+        i { color: $active-color;}
+
+        md-line {
+          padding-left: 5px;
+          a {
+            text-decoration: none;
+            color: $active-color;
+          }
+        }
+      }
+    }
+}

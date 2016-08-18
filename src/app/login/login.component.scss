@@ -1,0 +1,32 @@
+#login-form {
+  position: absolute;
+  left:50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -130px;
+  width:400px;
+  height: 260px;
+
+  md-input {
+    padding: 10px 0px;
+    width: 100%;
+  }
+
+  md-card-actions {
+    padding: 0px 15px;
+  }
+
+  div.error {
+    md-icon {
+      color: #CC0000;
+    }
+
+    span {
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    border: 1px solid #660000;
+    background-color: #FFFFCC;
+  }
+}

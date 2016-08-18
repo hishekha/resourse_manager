@@ -1,0 +1,52 @@
+<h1 class="page-title">Machines</h1>
+
+<div class="page-toolbar" *ngIf="!isAddMachineFormOpen">
+  <div class="tool-group">
+    <button md-icon-button><i class="material-icons">list</i></button>
+  </div>
+  <div class="tool-group">
+    <button md-icon-button class="fab-button" (click)="isAddMachineFormOpen = !isAddMachineFormOpen"><i class="material-icons">add</i></button>
+  </div>
+</div>
+
+<section *ngIf="isAddMachineFormOpen">
+  <md-card>
+    <form #newuser="ngForm">
+      <md-card-title>Add new machine</md-card-title>
+      <md-card-content>
+        <md-input placeholder="ip_address"></md-input>
+        <md-input placeholder="hostname"></md-input>
+        <md-checkbox name="is_qualified">Is qualified?</md-checkbox>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button md-raised-button color="primary">Add</button>
+        <button md-raised-button
+          (click)="isAddMachineFormOpen = !isAddMachineFormOpen"
+          color="primary">Cancel</button>
+      </md-card-actions>
+    </form>
+  </md-card>
+</section>
+
+<section *ngIf="!isAddMachineFormOpen">
+  <table class="app-table flexed">
+    <thead>
+      <th>Id</th>
+      <th>Hostname</th>
+      <th>IP</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let machine of machines">
+        <td>{{machine.id}}</td>
+        <td>{{machine.hostname}}</td>
+        <td>{{machine.ip_address}}</td>
+        <td>
+          <button md-icon-button >
+            <i class="material-icons">collections_bookmark</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

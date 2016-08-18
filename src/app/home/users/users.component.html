@@ -1,0 +1,52 @@
+<h1 class="page-title">Users</h1>
+
+<div class="page-toolbar" *ngIf="!isAddUserFormOpen">
+  <div class="tool-group">
+    <button md-icon-button><i class="material-icons">list</i></button>
+  </div>
+  <div class="tool-group">
+    <button md-icon-button class="fab-button" (click)="isAddUserFormOpen = !isAddUserFormOpen"><i class="material-icons">add</i></button>
+  </div>
+</div>
+
+<section *ngIf="isAddUserFormOpen">
+  <md-card>
+    <form #newuser="ngForm">
+      <md-card-title>Add new user</md-card-title>
+      <md-card-content>
+        <md-input placeholder="Username"></md-input>
+        <md-input placeholder="Email"></md-input>
+        <md-checkbox name="isAdmin">Is Admin?</md-checkbox>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button md-raised-button color="primary">Add</button>
+        <button md-raised-button
+          (click)="isAddUserFormOpen = !isAddUserFormOpen"
+          color="primary">Cancel</button>
+      </md-card-actions>
+    </form>
+  </md-card>
+</section>
+
+<section *ngIf="!isAddUserFormOpen">
+  <table class="app-table flexed">
+    <thead>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <button md-icon-button >
+            <i class="material-icons">collections_bookmark</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
